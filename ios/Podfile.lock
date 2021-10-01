@@ -1962,6 +1962,7 @@ PODS:
     - ExpoModulesCore
     - EXStructuredHeaders
     - EXUpdatesInterface
+    - OCMockito (~> 6.0)
     - React-Core
   - EXUpdatesInterface (0.3.1)
   - EXVideoThumbnails (5.2.0):
@@ -2128,6 +2129,9 @@ PODS:
   - nanopb/decode (2.30907.0)
   - nanopb/encode (2.30907.0)
   - Nimble (9.2.0)
+  - OCHamcrest (8.0.0)
+  - OCMockito (6.0.0):
+    - OCHamcrest (~> 8.0)
   - PromisesObjC (1.2.12)
   - Protobuf (3.14.0)
   - Quick (4.0.0)
@@ -2932,6 +2936,8 @@ SPEC REPOS:
     - MLKitFaceDetection
     - MLKitVision
     - nanopb
+    - OCHamcrest
+    - OCMockito
     - PromisesObjC
     - Protobuf
     - Stripe
@@ -4103,7 +4109,7 @@ SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   Branch: 9a37f707974a128c37829033c49018b79c7e7a2d
   CocoaLumberjack: 2f44e60eb91c176d471fdba43b9e3eae6a721947
-  DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
+  DoubleConversion: cde416483dac037923206447da6e1454df403714
   EXAdsAdMob: 5f2afdb4b7e49054380f04c48ec52e898e01ae7c
   EXAdsFacebook: 67eec2394ed07ef35d964777aa2e9f3396b6c029
   EXAmplitude: d1b44ca48ddf1487ad91b8aa96be46cf817dbb1e
@@ -4147,7 +4153,7 @@ SPEC CHECKSUMS:
   EXLocalization: baeeda60ec3bf94c7d3f15bcbcebff0eda557b30
   EXLocation: eb11da50338f6e4750166d1faee540108736f5ab
   EXMailComposer: 4c710ebe2570d7243ffc907a3d92d4ad8db763dc
-  EXManifests: 1077398d87071ff8130d1db7890185552d6a4567
+  EXManifests: f8699c9c0eda90d77bdf10526fcd2a336f510041
   EXMediaLibrary: 92ab16eed395d685a309543de92ca874f8327d0b
   EXNetwork: 58c5faaf0f7d5d6178906020314dd7b4b6ebcea4
   EXNotifications: 238aa36d5f5257cfa050f4879d522f01b6e7bed7
@@ -4170,7 +4176,7 @@ SPEC CHECKSUMS:
   EXStructuredHeaders: 65075e180f983a3bc6a625ac32175094bb0d1305
   EXTaskManager: 696c89798e26d2cd79f50721c94fd4849ff0a7a1
   EXTrackingTransparency: 770b8169bc72ee67d27d14a1e79974a6a3af2a35
-  EXUpdates: 5b978c8d8c4fca45b723491b39be8c67f9594e2c
+  EXUpdates: 6038c8eebd4674cb4cbb171daeea80bc22ef0487
   EXUpdatesInterface: c8792fd80c61e297e40faafe2efcba74106a6ce5
   EXVideoThumbnails: 49cec6b4122a7d1778ffa12c91e3c2322cf0a3cb
   EXWebBrowser: 36fd0e3d0138743ae3e220c4647abb687cd6cbc0
@@ -4184,7 +4190,7 @@ SPEC CHECKSUMS:
   FirebaseCore: ac35d680a0bf32319a59966a1478e0741536b97b
   FirebaseCoreDiagnostics: 3d36e05da74cb8b7ce30e6594a8f201b982c725c
   FirebaseInstallations: a58d4f72ec5861840b84df489f2668d970df558a
-  glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
+  glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
   Google-Maps-iOS-Utils: c32891ff472eaaa1fca032beedafa1a013af7875
   Google-Mobile-Ads-SDK: 2f288748a42920d1c744946a460896a95b0e9110
   GoogleAppMeasurement: 0c3b134b2c0a90c4c24833873894bfe0e42a0384
@@ -4207,6 +4213,8 @@ SPEC CHECKSUMS:
   MLKitVision: 51385878c9100024478971856510f9271ff555b5
   nanopb: 59221d7f958fb711001e6a449489542d92ae113e
   Nimble: 9ca39ec3cb156bbb8c27f4943fd4643d28729616
+  OCHamcrest: a613690381f1dac7637c18962c10dbe8feca4bb5
+  OCMockito: 780f04370226f81a9d972c97d1203864ef609f5b
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
   Protobuf: 0cde852566359049847168e51bd1c690e0f70056
   Quick: 5dc45f9bc11236594a7acc99f7bd85ecdc9a477d
