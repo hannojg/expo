@@ -156,9 +156,11 @@ static NSInteger const EXUpdatesErrorRecoveryRemoteLoadTimeoutMs = 5000;
   } else if (_delegate.remoteLoadStatus == EXUpdatesRemoteLoadStatusNewUpdateLoaded) {
     [_pipeline insertObject:@(EXUpdatesErrorRecoveryTaskLaunchNew) atIndex:0];
     [self _runNextTask];
-  } else {
+  } else if (_delegate.config.checkOnLaunch != EXUpdatesCheckAutomaticallyConfigNever) {
     _isWaitingForRemoteUpdate = YES;
     [_delegate loadRemoteUpdate];
+  } else {
+    [self _runNextTask];
   }
 }
 
