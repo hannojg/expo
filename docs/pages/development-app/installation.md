@@ -7,9 +7,9 @@ import InstallSection from '~/components/plugins/InstallSection';
 import ConfigurationDiff from '~/components/plugins/ConfigurationDiff';
 import { Tab, Tabs } from '~/components/plugins/Tabs';
 
-The installation steps on this page are only required to add expo-dev-client to an **existing** React Native or Bare project.
+The installation steps on this page are only required to add `expo-dev-client` module to an **existing** React Native or Bare project.
 
-To initialize a new Bare project or to add a development client to an existing managed project, see our [Getting Started guide](getting-started.md).
+To initialize a new Bare project or to add a the `expo-dev-client` module to an existing managed project, see our [Getting Started guide](getting-started.md).
 
 If you created your project with `expo init`, or you already have `expo` and/or other Expo modules up and running, use the tabs marked **With Expo modules** (most projects will fall under this category).
 
@@ -95,7 +95,7 @@ See the [uri-scheme package](https://www.npmjs.com/package/uri-scheme) for more 
 
 ### 🍏 iOS
 
-Make the following changes to allow the Development Client to control project initialization in the **DEBUG** mode.
+Make the following changes to allow the `expo-dev-client` module to control project initialization in the **DEBUG** mode.
 
 <Tabs tabs={["With Expo modules", "With unimodules", "Without unimodules"]}>
 
@@ -119,7 +119,7 @@ Make the following changes to allow the Development Client to control project in
 
 ### 🤖 Android
 
-Make the following changes to allow the Development Client to control project initialization in the **DEBUG** mode.
+Make the following changes to allow the `expo-dev-client` module to control project initialization in the **DEBUG** mode.
 
 > **Note:** If you have a custom activity in your application already, or just want to understand what the `DevMenuAwareReactActivity` is doing, you can see [advanced instructions for Android here.](https://github.com/expo/expo/tree/master/packages/expo-dev-menu#-android)
 
@@ -141,7 +141,7 @@ Make the following changes to allow the Development Client to control project in
 
 ## 3. Optional configuration
 
-There are a few more changes you can make to get the best experience, but you [can skip ahead to building](/clients/getting-started/#building-and-installing-your-first-custom-client) if you prefer.
+There are a few more changes you can make to get the best experience, but you [can skip ahead to building](/development-app/getting-started/#building-and-installing-your-first-development-app) if you prefer.
 
 ### Enable development with Expo CLI
 
@@ -165,11 +165,11 @@ import 'expo-dev-client';
 import App from "./App";
 ```
 
-> Note: This will only affect the application in which you make this change. If you are using your custom client to load multiple applications, you'll need to add this import statement to each of them.
+> Note: This will only affect the application in which you make this change. If you are using your development app to load multiple applications, you'll need to add this import statement to each of them.
 
 ### Loading published updates
 
-The Development Client can also be used to open and preview published updates to your app. To add this feature, you need to add `expo-updates@0.8.0` or newer to your app if it isn't already installed, and add a small additional integration in your `AppDelegate.m` and `MainApplication.java` files.
+Development apps can also open and preview published updates to your app. To add this feature, you need to add `expo-updates@0.8.0` or newer to your app if it isn't already installed, and add a small additional integration in your `AppDelegate.m` and `MainApplication.java` files.
 
 1. [Install and set up `react-native-unimodules` in your project](../bare/installing-unimodules.md), if you have not already done so.
 2. [Install and set up `expo-updates` in your project](../bare/installing-updates.md), if you have not already done so.
@@ -181,4 +181,4 @@ The Development Client can also be used to open and preview published updates to
 
 ## 4. Build and Install
 
-You're now ready to [build your first custom client](/clients/getting-started.md#building-and-installing-your-first-custom-client) and to start developing.
+You're now ready to [build your first development app](/development-app/getting-started.md#building-and-installing-your-first-development-app).
