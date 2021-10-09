@@ -8,7 +8,7 @@ import ImageSpotlight from '~/components/plugins/ImageSpotlight'
 
 > 👀 Want to get notified of new releases with a changelog and upgrade instructions? Sign up for the [mailing list](https://expo.dev/mailing-list/dev-client).
 
-**Development apps** provide in-app development tools to assist you while developing projects build with Expo. With a compatible app for each platform an app targets, you can focus your time and energy building your application fully in JavaScript and gain the developer experience that Expo is known for:
+Development apps provide in-app development tools to assist you while developing projects built with Expo. With a compatible app for each platform an app targets, you can focus your time and energy building your app fully in JavaScript and gain the developer experience that Expo is known for:
 
 - Easy for new developers without native experience to join the team
 - Quickly verify the impact of changes to your project
@@ -24,9 +24,9 @@ Depending on your project, you may find that you need to customize the standard 
   <embed src="https://youtube.com/embed/_SWalkrP0CA" type="application/x-shockwave-flash" wmode="transparent" width="100%" height="400" />
 </object>
 
-`expo-dev-client` is an npm package installable in any Expo or React Native project. Once installed, any Debug builds of your application will gain an extensible debug menu and the ability to load projects from Expo CLI. Release builds of your application will not change other than the addition of a few header files.
+`expo-dev-client` is an npm package installable in any Expo or React Native project. Once installed, any Debug builds of your application will gain an extensible developer menu and the ability to load projects from Expo CLI. Release builds of your application will not change other than the addition of a few header files.
 
-Your debug builds can be shared with anyone on your team who needs to work on or review your application. Your team can develop the JavaScript portion of your application with `expo-cli` and your development app without waiting for your native code to build until the next time you need to upgrade, install a new module, or otherwise change the native code in your project.
+Your development apps can be shared with anyone on your team who needs to work on or review your application. Your team can develop the JavaScript portion of your application with Expo CLI and your development app without waiting for your native code to build until the next time you need to upgrade, install a new module, or otherwise change the native code in your project.
 
 ## What you'll gain by adopting `expo-dev-client`
 
@@ -41,7 +41,7 @@ Your debug builds can be shared with anyone on your team who needs to work on or
 ### If you are using React Native CLI
 
 - Develop iOS applications without a machine running MacOS
-- Run your application on a physical device without plugging it
+- Run your application on a physical device without plugging it in
 - Develop using any available port
 - Quickly connect to your device via QR code
 - Improved developer experience of Expo CLI

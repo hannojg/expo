@@ -13,13 +13,13 @@ You can set up your project to use EAS by running `eas build:configure`. If you 
 
 **eas.json** comes with three build profiles: "development", "preview", and "production". These profile names reference three different types of apps you can build.
 
-1. Development apps are builds of your project that include the [`expo-dev-client`](https://github.com/expo/expo/tree/master/packages/expo-dev-client) package, which provides developer tools to help you develop your project.
+1. Development apps are builds of your project that include the [`expo-dev-client`](https://github.com/expo/expo/tree/master/packages/expo-dev-client) module, which provides developer tooling.
 2. Preview apps are builds that do not include developer tools. They're great for sharing with your team via internal distribution or for testing your app on an Android emulator or iOS simulator.
 3. Production apps are meant to be submitted to the app stores, and eventually released to users of your app.
 
 Each of these profiles are completely customizable according to the [**eas.json** reference](/build/eas-json).
 
-To make your project into a development app, you can use the "development" profile:
+To configure a development app, you can use the "development" profile:
 
 ```json
 {

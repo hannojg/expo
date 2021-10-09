@@ -7,19 +7,17 @@ import TerminalBlock from '~/components/plugins/TerminalBlock';
 import SnackInline from '~/components/plugins/SnackInline';
 import { Tab, Tabs } from '~/components/plugins/Tabs';
 
+Development apps are builds of your project that include the [`expo-dev-client`](https://github.com/expo/expo/tree/master/packages/expo-dev-client) module, which provides developer tooling.
+
 `expo-dev-client` is designed to support any workflow, release process, or set of dependencies in the Expo / React Native ecosystem. Whatever the needs of your project, either now or in the future, you'll be able to create development apps for it and get the productivity and quality of life improvements of JavaScript-driven development.
 
-Of course, there are always tradeoffs, and that flexibility means there's not just one way to get started! To help you choose the options that are right for you, these icons indicate:
-
-> ✨ The quickest way to get up and running
-
-> 👷 Advanced options that may require additional configuration
+Of course, there are always tradeoffs, and that flexibility means there's not just one way to get started.
 
 ## Installing the `expo-dev-client` module in your project
 
 If you have used Expo before, especially with the Managed workflow, [config plugins](/guides/config-plugins.md) will let you customize your project from JavaScript without ever needing to directly modify Xcode or Android Studio projects.
 
-<Tabs tabs={["✨ With config plugins ✨", "👷 If you are directly managing your native projects 👷"]}>
+<Tabs tabs={["With config plugins (fastest)", "If you are directly managing your native projects"]}>
 
 <Tab >
 <TerminalBlock cmd={["expo init # if you don't already have a Managed Workflow project", "yarn add expo-dev-client"]}  />
@@ -36,7 +34,7 @@ If you're just starting your project, you can create a new project from our temp
 
 If you have an existing project, you'll need to [install the package and make a few changes](installation.md) to your `AppDelegate.m`, `MainActivity.java` and `MainApplication.java`.
 
-Development apps use deep links to open projects from the QR code. If you have added a custom deep link scheme to your project, your development app will use it. However, if this isn't the case, you need to configure the deep link support for your application. The `uri-scheme` package will do this for you once you have chosen a scheme.
+Development apps use deep links to open projects from the QR code. If you have added a custom deep link scheme to your project, your development app will use it. However, if this isn't the case, you need to configure the deep link support for your app. The `uri-scheme` package will do this for you once you have chosen a scheme.
 
 <TerminalBlock cmd={["npx uri-scheme add <your scheme>"]} />
 
@@ -46,7 +44,7 @@ Development apps use deep links to open projects from the QR code. If you have a
 
 ## Building and installing your first development app
 
-### ✨ In the cloud ✨
+### In the cloud with EAS
 
 However you choose to manage your native projects, we recommend using [EAS Build](eas-build.md) for the smoothest experience, especially if you do not have experience with Xcode and Android Studio builds.
 
@@ -74,11 +72,11 @@ Once you have all of the iOS devices you would like to install your development 
 
 and installing the resulting build on your device.
 
-### 👷 Locally 👷
+### Locally with Xcode and Android Studio
 
-If you are comfortable setting up Xcode, Android Studio, and related dependencies, you can build and distribute your app the same as any other iOS or Android application.
+If you are comfortable setting up Xcode, Android Studio, and related dependencies, you can build and distribute your app the same as any other iOS or Android app.
 
-The `expo run` commands will run a new build, install it on to your emulated device, and launch you into your application.
+The `expo run` commands will run a new build, install it on to your emulated device, and launch you into your app.
 
 <Tabs tabs={["For iOS Simulator (MacOS Only)", "For Android Emulator"]}>
 
@@ -96,11 +94,11 @@ The `expo run` commands will run a new build, install it on to your emulated dev
 
 </Tabs>
 
-## Developing your application
+## Developing your app
 
 As you can see, creating a new native build from scratch takes long enough that you'll be tempted to switch tasks and lose your focus.
 
-But now that you have a development app for your project installed on your device, you won't have to wait for the native build process again until you change the underlying native code that powers your application!
+But now that you have a development app for your project installed on your device, you won't have to wait for the native build process again until you change the underlying native code that powers your app!
 
 Instead, all you need to do to start developing is to run:
 
@@ -110,7 +108,7 @@ and scanning the resulting QR code with your system camera or QR code reader (if
 
 or pressing the "a" or "i" keys (to open the app in your Android or iPhone emulator respectively).
 
-Now make some changes to your application code and see them reflected on your device!
+Now make some changes to your app code and see them reflected on your device!
 
 ### The launcher screen
 
@@ -145,9 +143,9 @@ then register the plugin in your app.json. Using this module will require new pe
 }
 ```
 
-> ⚠️ Because adding this module changes your native runtime, you'll need to build a new development app before using it. If you forget to do so, you'll get an `Invariant Violation: Native module cannot be null.` error when you attempt to load your application.
+> ⚠️ Because adding this module changes your native runtime, you'll need to build a new development app before using it. If you forget to do so, you'll get an `Invariant Violation: Native module cannot be null.` error when you attempt to load your app.
 
-Once you've generated new builds with EAS build or the `expo run` commands, you can access the new capabilities in your application code.
+Once you've generated new builds with EAS build or the `expo run` commands, you can access the new capabilities in your app's code.
 
 Add the following code to your App.tsx, run `expo start --dev-client`, and load your JavaScript. Now you can convert speech to text in your app!
 
@@ -218,6 +216,6 @@ const styles = StyleSheet.create({
 });
 ```
 
-## Debugging your application
+## Debugging your app
 
-When you need to, you can access the menu by pressing Cmd-d in Expo CLI or by shaking your phone or tablet. Here you'll be able to access all of the functions of your development app, access any debugging functionality you need, switch to a different version of your application, or [any capabilities you have added yourself](extending-the-dev-menu.md).
+When you need to, you can access the menu by pressing Cmd-d in Expo CLI or by shaking your phone or tablet. Here you'll be able to access all of the functions of your development app, access any debugging functionality you need, switch to a different version of your app, or [any capabilities you have added yourself](extending-the-dev-menu.md).
