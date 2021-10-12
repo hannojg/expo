@@ -15,6 +15,11 @@ public class ModuleHolder {
   private(set) weak var appContext: AppContext?
 
   /**
+   JavaScript object that represents the module instance in the runtime.
+   */
+  private(set) weak var jsObject: JSIObject?
+
+  /**
    Caches the definition of the module type.
    */
   let definition: ModuleDefinition
@@ -38,6 +43,8 @@ public class ModuleHolder {
     }
     if module == nil, let moduleType = definition.type {
       module = moduleType.init(appContext: appContext)
+      jsObject = Self.createDecoratedRuntimeObject(appContext.runtime!, definition: definition)
+      appContext.runtime?.mainObject().setProperty(name, jsObject)
       post(event: .moduleCreate)
     }
     return module
@@ -81,11 +88,14 @@ public class ModuleHolder {
     call(method: methodName, args: args, promise: promise)
   }
 
-  func callSync(method methodName: String, args: [Any?]) -> Any? {
-    if let method = definition.methods[methodName] {
-      return method.callSync(args: args)
+  func callSync(method methodName: String, args: [Any?]) throws -> Any? {
+    guard let module = try getInstance() else {
+      throw ModuleNotFoundError(moduleName: self.name)
     }
-    return nil
+    guard let method = definition.methods[methodName] else {
+      throw MethodNotFoundError(methodName: methodName, moduleName: self.name)
+    }
+    return method.callSync(module: module, args: args)
   }
 
   // MARK: Listening to events
@@ -106,6 +116,20 @@ public class ModuleHolder {
     listeners(forEvent: event).forEach {
       try? $0.call(module, payload)
     }
+  }
+
+  // MARK: Runtime operations
+
+  static func createDecoratedRuntimeObject(_ runtime: JSIRuntime, definition: ModuleDefinition) -> JSIObject {
+    let object = runtime.createObject()
+
+    for constant in definition.constants {
+      object[constant.key] = constant.value
+    }
+//    for method in definition.methods {
+//      object.setFunction(method.key)
+//    }
+    return object
   }
 
   // MARK: Deallocation
